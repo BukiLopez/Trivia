@@ -25,26 +25,12 @@
     height: 50px;
     background-color: yellow;
     font-family: 'Minecraft', sans-serif;
+    font-size: 35px;
     box-shadow: 0 4px 16px rgba(49, 13, 172, 1);
-    font-size: 1.5vw; /* Ajusta este valor según tus necesidades */
-    text-align: center; /* Centra el texto en el botón */
-    white-space: normal; /* Permite que el texto se ajuste a varias líneas */
-    word-wrap: break-word; /* Permite que las palabras largas se rompan en varias líneas */
 }
 .selection-button:hover{
     background-color: #ffcc00;
     color: rgba(255, 0, 255, 1) !important;
     box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
     transition: all 0.2s ease;
-}
-.imagen{
-    width: 40%;
-    height: 20%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    font-family: 'Minecraft', sans-serif;
 }
