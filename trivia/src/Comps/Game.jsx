@@ -1,13 +1,11 @@
+import React, { useState, useEffect } from 'react';
 import './Game.css';
-import logo from './Yipi.jpeg';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 function Game() {
     const [preguntas, setPreguntas] = useState([]);
     const [indicePreguntaActual, setIndicePreguntaActual] = useState(0);
     const [puntos, setPuntos] = useState(0);
-    const [preguntasRespondidas, setPreguntasRespondidas] = useState(0);
+    const [respuestaClickeada, setRespuestaClickeada] = useState(null);
 
     useEffect(() => {
         fetch("https://getpantry.cloud/apiv1/pantry/eab0f25a-9d10-4fdb-9af3-b49c71d9f3c9/basket/trivia")
@@ -22,31 +20,19 @@ function Game() {
         return Math.floor(Math.random() * preguntas.length);
     }
 
-    const handleAnswerClick = (respuesta) => {
+    const handleAnswerClick = (respuesta, index) => {
         if (respuesta.correcta) {
             // Sumar un punto si la respuesta es correcta
             setPuntos(puntos + 1);
         }
-        // Incrementar el número de preguntas respondidas
-        setPreguntasRespondidas(preguntasRespondidas + 1);
-        // Pasar a la siguiente pregunta si aún no se han respondido las 3 preguntas
-        if (preguntasRespondidas < 3) {
+        // Almacenar el índice de la respuesta clickeada
+        setRespuestaClickeada(index);
+        // Esperar un segundo antes de pasar a la siguiente pregunta
+        setTimeout(() => {
+            setRespuestaClickeada(null);
             setIndicePreguntaActual(aleatorio());
-        }
+        }, 1000);
     };
-
-    if (preguntasRespondidas === 3) {
-        return (
-            <div className="game-container">
-                <h1>¡Juego terminado!</h1>
-                <h2>Tu puntuación total es: {puntos}</h2>
-                <p></p>
-                <img src={logo} alt='Imagen de victoria'></img>
-                <p></p>
-                <Link to="/"><button className='selection-button'>Volver al menu</button></Link> 
-            </div>
-        );
-    }
 
     if (!preguntaActual) {
         return null;
@@ -58,7 +44,11 @@ function Game() {
             <div className="imagen"><img src={preguntaActual.imagen} alt="mapa del juego" /></div>
             <div className="answers-container">
                 {preguntaActual.respuestas.map((respuesta, index) => (
-                    <button key={index} className="selection-button" onClick={() => handleAnswerClick(respuesta)}>
+                    <button 
+                        key={index} 
+                        className={`selection-button ${respuestaClickeada === index ? (respuesta.correcta ? 'correcta' : 'incorrecta') : ''}`} 
+                        onClick={() => handleAnswerClick(respuesta, index)}
+                    >
                         {respuesta.texto}
                     </button>
                 ))}
