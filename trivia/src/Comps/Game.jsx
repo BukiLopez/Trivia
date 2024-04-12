@@ -43,8 +43,7 @@ function Game() {
                 <p></p>
                 <img src={logo} alt='Imagen de victoria'></img>
                 <p></p>
-                <Link to="/"><button className='selection-button'>Volver al menu</button></Link>
-                
+                <Link to="/"><button className='selection-button'>Volver al menu</button></Link> 
             </div>
         );
     }
