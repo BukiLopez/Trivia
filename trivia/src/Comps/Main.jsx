@@ -7,16 +7,16 @@ function Main() {
       <h1 className='title'>¿ESTÁS LISTO?</h1>
       <p>Selecciona un modo de juego</p>
       <div className='buttons-container'>
-      <Link to="Game">
+      <Link to="/Game">
         <button className='selection-button'>Portadas</button>
         </Link>
-        <Link to="Game">
+        <Link to="/Game">
         <button className='selection-button'>Mapas</button>
         </Link>
-        <Link to="Game">
+        <Link to="/Game">
         <button className='selection-button'>Armas</button>
         </Link>
-        <Link to="Game">
+        <Link to="/Game">
         <button className='selection-button' >Invetarios</button>
         </Link>
         
