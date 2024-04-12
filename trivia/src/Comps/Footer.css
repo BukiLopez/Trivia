@@ -1,9 +1,9 @@
 footer {
-    margin-top: auto;
     background-color: #282c34;
     color: white;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.9);
-    font-family: 'Minecraft', sans-serif;
-    padding: 20px;
-    margin-top: auto;
+    width: auto;
+    padding: 24px;
+    bottom: 0;
+    margin-top: 100px;
 }
