@@ -7,7 +7,7 @@ function Main() {
       <h1 className='title'>¿ESTÁS LISTO?</h1>
       <p>Selecciona un modo de juego</p>
       <div className='buttons-container'>
-      <Link to="/Game">
+      <Link to="/GameBlur">
         <button className='selection-button'>Portadas</button>
         </Link>
         <Link to="/Game">
