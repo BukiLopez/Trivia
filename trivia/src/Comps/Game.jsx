@@ -5,6 +5,7 @@ function Game() {
     const [preguntas, setPreguntas] = useState([]);
     const [indicePreguntaActual, setIndicePreguntaActual] = useState(0);
     const [puntos, setPuntos] = useState(0);
+    const [preguntasRespondidas, setPreguntasRespondidas] = useState(0);
 
     useEffect(() => {
         fetch("https://getpantry.cloud/apiv1/pantry/eab0f25a-9d10-4fdb-9af3-b49c71d9f3c9/basket/trivia")
@@ -24,9 +25,22 @@ function Game() {
             // Sumar un punto si la respuesta es correcta
             setPuntos(puntos + 1);
         }
-        // Pasar a la siguiente pregunta
-        setIndicePreguntaActual(aleatorio());
+        // Incrementar el número de preguntas respondidas
+        setPreguntasRespondidas(preguntasRespondidas + 1);
+        // Pasar a la siguiente pregunta si aún no se han respondido las 3 preguntas
+        if (preguntasRespondidas < 3) {
+            setIndicePreguntaActual(aleatorio());
+        }
     };
+
+    if (preguntasRespondidas === 3) {
+        return (
+            <div className="game-container">
+                <h1>¡Juego terminado!</h1>
+                <h2>Tu puntuación total es: {puntos}</h2>
+            </div>
+        );
+    }
 
     if (!preguntaActual) {
         return null;
