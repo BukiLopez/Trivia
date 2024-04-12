@@ -1,5 +1,7 @@
 import './Game.css';
+import logo from './Yipi.jpeg';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Game() {
     const [preguntas, setPreguntas] = useState([]);
@@ -38,6 +40,11 @@ function Game() {
             <div className="game-container">
                 <h1>¡Juego terminado!</h1>
                 <h2>Tu puntuación total es: {puntos}</h2>
+                <p></p>
+                <img src={logo} alt='Imagen de victoria'></img>
+                <p></p>
+                <Link to="/"><button className='selection-button'>Volver al menu</button></Link>
+                
             </div>
         );
     }
