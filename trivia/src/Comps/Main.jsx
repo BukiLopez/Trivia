@@ -5,7 +5,7 @@ import logo from './Logo.jpeg';
 function Main() {
   return (
     <div className='content'>
-      <h1 className='title'>¿ESTÁS LISTO?</h1>
+      <h1 className='title'>¿ESTAS LISTO?</h1>
       <img src={logo} alt='' className="small-image"></img>
       <p>Selecciona un modo de juego</p>
       <div className='buttons-container'>
