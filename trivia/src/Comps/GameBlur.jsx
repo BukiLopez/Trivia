@@ -54,7 +54,7 @@ function Game() {
     return (
         <div className="game-container">
             <h1 className="title">{preguntaActual.pregunta}</h1>
-            <div className="imagen"><img src={preguntaActual.imagen} alt="mapa del juego" /></div>
+            <div className="imagen-blur"><img src={preguntaActual.imagen} alt="mapa del juego" /></div>
             <div className="answers-container">
                 {preguntaActual.respuestas.map((respuesta, index) => (
                     <button key={index} className="selection-button" onClick={() => handleAnswerClick(respuesta)}>
