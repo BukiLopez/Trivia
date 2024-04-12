@@ -1,6 +1,7 @@
 import './GameBlur.css';
+import logo from './Yipi.jpeg';
 import { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 function Game() {
     const [preguntas, setPreguntas] = useState([]);
     const [indicePreguntaActual, setIndicePreguntaActual] = useState(0);
@@ -38,6 +39,10 @@ function Game() {
             <div className="game-container">
                 <h1>¡Juego terminado!</h1>
                 <h2>Tu puntuación total es: {puntos}</h2>
+                <p></p>
+                <img src={logo} alt='Imagen de victoria'></img>
+                <p></p>
+                <Link to="/"><button className='selection-button'>Volver al menu</button></Link>
             </div>
         );
     }
@@ -49,7 +54,7 @@ function Game() {
     return (
         <div className="game-container">
             <h1 className="title">{preguntaActual.pregunta}</h1>
-            <div className="imagen"><img src={preguntaActual.imagen} alt="mapa del juego" /></div>
+            <div className="imagen-blur"><img src={preguntaActual.imagen} alt="mapa del juego" /></div>
             <div className="answers-container">
                 {preguntaActual.respuestas.map((respuesta, index) => (
                     <button key={index} className="selection-button" onClick={() => handleAnswerClick(respuesta)}>

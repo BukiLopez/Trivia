@@ -20,6 +20,7 @@
     margin: 10px; /* Añade margen alrededor de los botones para espacio */
 }
 .selection-button{
+    font-family: 'minecraft';
     border-radius: 8px;
     width: 350px;
     height: 50px;
@@ -32,4 +33,14 @@
     color: rgba(255, 0, 255, 1) !important;
     box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
     transition: all 0.2s ease;
+}
+.imagen-blur{
+    width: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    filter: blur(1.5rem);
 }
