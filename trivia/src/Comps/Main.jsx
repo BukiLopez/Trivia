@@ -15,12 +15,6 @@ function Main() {
         <Link to="/Game">
         <button className='selection-button'>Mapas</button>
         </Link>
-        <Link to="/Game">
-        <button className='selection-button'>Armas</button>
-        </Link>
-        <Link to="/Game">
-        <button className='selection-button' >Invetarios</button>
-        </Link>
       </div>
     </div>
   );
