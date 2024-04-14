@@ -46,3 +46,11 @@
     flex-direction: column;
     margin: 0;
 }
+
+.correcta {
+    border: 5px solid green;
+}
+
+.incorrecta {
+    border: 5px solid red;
+}
